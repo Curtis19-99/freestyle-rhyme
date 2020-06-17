@@ -1,7 +1,12 @@
 # Freestyle Rhyme
 
 ## Introduction
+ 
+Freestyle rhyme is an app that auto generates rhymes. +details 
 
 ## Design documentation
 
-* [Wireframe diagram](wireframe.md)
+## [User Stories](user-stories.md)
+
+
+## [Wireframe diagram](wireframe.md)
