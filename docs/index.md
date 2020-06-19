@@ -2,16 +2,18 @@
 
 ## Project Description
  
-* The purpose of this app is to create a rhyme generator for when you freestyle and you get stuck, or run out of rhymes and need ideas. This app will rhyme single words or last words of sentences to keep in the format of freestyling. It will also have a random rhyme/topic generator to help stimulate ideas and subject matter to rap about. This app can be used for different purposes as well for example it could be used as just a simple rhyme generator or for writing poems.
+* The purpose of this app is to create a rhyme generator for when you are freestyling, and you get stuck, or run out of rhymes and need ideas. This app will rhyme single words or last words of sentences to keep in the format of freestyling. It will also have a random rhyme/topic generator to help stimulate ideas and subject matter to rap about. This app can be used for different purposes as well for example it could be used as just a simple rhyme generator or for writing poems.
 
 ## Intended functionality
-* The user will be able to enter in a word and it will bring up words that rhyme with it.
+* The user will have the ability to enter in a word and it will bring up a list of words that rhyme with the entered word.
 
-* The user will be able to enter in lines of words or "bars" and it will take the last word and rhyme it together keeping the format of freestlying. 
+* The user will be able to enter in lines of words or "bars", and it will take the last word and rhyme it together keeping the format of freestlying. 
 
-* The user will be able to hit a random topic button and it will bring up a random topic.
+* The user will be able to hit a random topic button, and it will bring up a random topic.
 
-* The user will be able to hit a random word button and it will bring up a random word to rhyme with.
+* The user will be able to hit a random word button, and it will bring up a random word to rhyme with.
+
+* This app can be used for much more than freestyling. For example it can be used to help write song or poems.
 
 ## [User Stories](user-stories.md)
 
@@ -27,4 +29,5 @@
 * Microphone access, https://developer.android.com/reference/android/media/MicrophoneInfo?hl=en
 > Microphone access will be used to say words instead of typing them. 
 
-* App should be functional without full time access to services/data source.
+* Google sign in, https://developers.google.com/identity/sign-in/android/
+> Google sign in will be used to access stored data through each account. This will give the user the ability to remember recent words used. 
