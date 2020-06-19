@@ -2,7 +2,7 @@
 
 ## Project Description
  
-* The purpose of this app is to create a rhyme generator for when you freestyle and you get stuck, or run out of rhymes and need ideas. This app will rhyme single words or last words of sentences to keep in the format of freestyling. It will also have a random rhyme/topic generator to help stimulate ideas and subject matter to rap about. This app can be used for different purposes as well for example it could be used as just a rhyme generator or for writing poems.
+* The purpose of this app is to create a rhyme generator for when you freestyle and you get stuck, or run out of rhymes and need ideas. This app will rhyme single words or last words of sentences to keep in the format of freestyling. It will also have a random rhyme/topic generator to help stimulate ideas and subject matter to rap about. This app can be used for different purposes as well for example it could be used as just a simple rhyme generator or for writing poems.
 
 ## Intended functionality
 * The user will be able to enter in a word and it will bring up words that rhyme with it.
