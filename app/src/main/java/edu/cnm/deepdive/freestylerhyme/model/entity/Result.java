@@ -2,6 +2,7 @@ package edu.cnm.deepdive.freestylerhyme.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.ColumnInfo.Collate;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
@@ -26,6 +27,17 @@ public class Result {
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String text = "";
+
+  @ColumnInfo(name = "syllable_count")
+  private int syllableCount;
+
+  public int getSyllableCount() {
+    return syllableCount;
+  }
+
+  public void setSyllableCount(int syllableCount) {
+    this.syllableCount = syllableCount;
+  }
 
   public long getId() {
     return id;

@@ -36,9 +36,10 @@ public interface ResultDao {
   @Query("SELECT * FROM Result WHERE word_id = :wordId")
   Single<List<Result>> selectBySourceId(Long wordId);
 
+/*
   @Transaction
   @Query("SELECT * FROM Result WHERE result_id = :resultId")
   Single<ResultWithWord> selectById(long resultId);
+*/
 
-  //TODO Add syllable part in.
 }
