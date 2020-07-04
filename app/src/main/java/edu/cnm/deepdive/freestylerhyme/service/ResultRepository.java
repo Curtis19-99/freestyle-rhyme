@@ -1,19 +1,47 @@
 package edu.cnm.deepdive.freestylerhyme.service;
 
 import android.content.Context;
+import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.freestylerhyme.model.Dao.ResultDao;
 import edu.cnm.deepdive.freestylerhyme.model.Dao.WordDao;
+import edu.cnm.deepdive.freestylerhyme.model.entity.Result;
+import edu.cnm.deepdive.freestylerhyme.model.pojo.ResultWithWord;
+import io.reactivex.Completable;
+import io.reactivex.Single;
+import io.reactivex.schedulers.Schedulers;
+import java.util.List;
 
 public class ResultRepository {
 
   private final Context context;
-  private final ResultDatabase database;
+  private final FreestyleDatabase database;
   private final WordDao wordDao;
   private final ResultDao resultDao;
 
   public ResultRepository(Context context) {
     this.context = context;
-    database = ResultDatabase.getInstance();
+    database = FreestyleDatabase.getInstance();
+    wordDao = database.getWordDao();
+    resultDao = database.getResultDao();
+  }
+
+  public LiveData<List<ResultWithWord>> getAll() {
+    return resultDao.selectAll();
+  }
+
+  public Single<ResultWithWord> get(long id) {
+    return resultDao.selectBySourceId(id)
+        .subscribeOn(Schedulers.io()); // TODO Ask
+  }
+
+  public Completable save(Result result) {
+    if (result.getId() == 0) {
+      return Completable.fromAction(() -> {})
+          .subscribeOn(Schedulers.io());
+    } else {
+      return Completable.fromSingle(resultDao.delete(result))
+          .subscribeOn(Schedulers.io());
+    }
   }
 
 }

@@ -10,12 +10,12 @@ import java.util.List;
 public class WordRepository {
 
   private final Context context;
-  private final WordDatabase database;
+  private final FreestyleDatabase database;
   private final WordDao wordDao;
 
   public WordRepository(Context context) {
     this.context = context;
-    database = ResultDatabase.getInstance();
+    database = FreestyleDatabase.getInstance();
     wordDao = database.getWordDao();
   }
 
