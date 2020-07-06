@@ -34,7 +34,7 @@ public interface ResultDao {
   LiveData<List<ResultWithWord>> selectAll();
 
   @Query("SELECT * FROM Result WHERE word_id = :wordId")
-  Single<List<Result>> selectBySourceId(Long wordId);
+  Single<List<Result>> selectById(Long wordId);
 
 /*
   @Transaction

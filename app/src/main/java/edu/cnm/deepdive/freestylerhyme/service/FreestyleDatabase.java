@@ -29,6 +29,7 @@ import java.util.Map;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import edu.cnm.deepdive.freestylerhyme.R;
 
 @Database(
     entities = {Word.class, Result.class},
@@ -69,7 +70,7 @@ public abstract class FreestyleDatabase extends RoomDatabase {
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
       try {
-        Map<Word, List<Result>> map = parseFile(R.raw.result); //TODO figure out why R is red.
+        Map<Word, List<Result>> map = parseFile(R.raw.review); //TODO figure out why R is red.
         persist(map);
       } catch (IOException e) {
         throw new RuntimeException(e);

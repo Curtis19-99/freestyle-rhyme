@@ -30,8 +30,8 @@ public class ResultRepository {
   }
 
   public Single<ResultWithWord> get(long id) {
-    return resultDao.selectBySourceId(id)
-        .subscribeOn(Schedulers.io()); // TODO Ask
+    return resultDao.selectById(id)
+        .subscribeOn(Schedulers.io());
   }
 
   public Completable save(Result result) {
@@ -44,4 +44,13 @@ public class ResultRepository {
     }
   }
 
+  public Completable delete(Result result) {
+    if (result.getId() == 0) {
+      return Completable.fromAction(() -> {})
+          .subscribeOn(Schedulers.io());
+    } else {
+      return Completable.fromSingle(resultDao.delete(result))
+          .subscribeOn(Schedulers.io());
+    }
+  }
 }
