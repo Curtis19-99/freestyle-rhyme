@@ -1,5 +1,5 @@
-* https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/model/entity
+[Entity class](https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/model/entity)
 
-* https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/model/dao
+[Dao interfaces](https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/model/dao)
 
-* https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/service
+[Database and Repository](https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/service)
