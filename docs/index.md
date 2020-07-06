@@ -32,4 +32,6 @@
 * Google sign in, https://developers.google.com/identity/sign-in/android/
 > Google sign in will be used to access stored data through each account. This will give the user the ability to remember recent words used. The app will work without access to Google sign in. However, it will not have the ability to remember recent words used.
 
-## [Classes and Interfaces](milestone2-links)
+## [Classes and Interfaces](milestone2-links.md)
+
+##DDL
