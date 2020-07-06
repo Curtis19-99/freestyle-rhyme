@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.freestylerhyme.model.Dao;
+package edu.cnm.deepdive.freestylerhyme.model.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

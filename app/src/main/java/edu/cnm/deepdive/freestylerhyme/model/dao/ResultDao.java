@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.freestylerhyme.model.Dao;
+package edu.cnm.deepdive.freestylerhyme.model.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -34,12 +34,12 @@ public interface ResultDao {
   LiveData<List<ResultWithWord>> selectAll();
 
   @Query("SELECT * FROM Result WHERE word_id = :wordId")
-  Single<List<Result>> selectById(Long wordId);
+  Single<List<Result>> selectByWordId(long wordId);
 
-/*
+
   @Transaction
   @Query("SELECT * FROM Result WHERE result_id = :resultId")
   Single<ResultWithWord> selectById(long resultId);
-*/
+
 
 }

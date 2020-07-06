@@ -2,8 +2,7 @@ package edu.cnm.deepdive.freestylerhyme.service;
 
 import android.content.Context;
 import androidx.lifecycle.LiveData;
-import edu.cnm.deepdive.freestylerhyme.model.Dao.WordDao;
-import edu.cnm.deepdive.freestylerhyme.model.entity.Result;
+import edu.cnm.deepdive.freestylerhyme.model.dao.WordDao;
 import edu.cnm.deepdive.freestylerhyme.model.entity.Word;
 import java.util.List;
 
