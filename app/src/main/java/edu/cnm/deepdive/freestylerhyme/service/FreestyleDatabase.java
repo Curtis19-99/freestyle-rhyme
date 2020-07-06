@@ -89,7 +89,7 @@ public abstract class FreestyleDatabase extends RoomDatabase {
           String wordName = record.get(0).trim();
           if (!wordName.isEmpty()) {
             word = new Word();
-            word.setName(wordName);
+            word.setWord(wordName);
           }
           List<Result> results = map.computeIfAbsent(word, (s) -> new LinkedList<>());
           Result result = new Result();
