@@ -69,7 +69,7 @@ public abstract class FreestyleDatabase extends RoomDatabase {
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
       try {
-        Map<Word, List<Result>> map = parseFile(R.raw.results); //TODO figure out why R is red.
+        Map<Word, List<Result>> map = parseFile(R.raw.result); //TODO figure out why R is red.
         persist(map);
       } catch (IOException e) {
         throw new RuntimeException(e);
