@@ -32,6 +32,12 @@
 * Google sign in, https://developers.google.com/identity/sign-in/android/
 > Google sign in will be used to access stored data through each account. This will give the user the ability to remember recent words used. The app will work without access to Google sign in. However, it will not have the ability to remember recent words used.
 
-## [Classes and Interfaces](milestone2-links.md)
+## Classes and Interfaces
 
-##DDL
+[Entity class](https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/model/entity)
+
+[Dao interfaces](https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/model/dao)
+
+[Database and Repository](https://github.com/Curtis19-99/freestyle-rhyme/tree/master/app/src/main/java/edu/cnm/deepdive/freestylerhyme/service)
+
+## [Data Definition Language (DDL)](ddl.md)
