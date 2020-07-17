@@ -32,15 +32,15 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     pending = new CompositeDisposable();
   }
 
-  public LiveData<List<ResultWithWord>> getQuotes() {
+  public LiveData<List<ResultWithWord>> getResults() {
     return resultRepository.getAll();
   }
 
-  public LiveData<List<Word>> getSources() {
+  public LiveData<List<Word>> getWords() {
     return wordRepository.getAll();
   }
 
-  public MutableLiveData<ResultWithWord> getQuote() {
+  public MutableLiveData<ResultWithWord> getResult() {
     return result;
   }
 
