@@ -7,4 +7,40 @@
   android:layout_height="match_parent"
   tools:context=".controller.MainActivity">
 
+  <Button
+    android:id="@+id/button_word"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/random_word"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+    tools:layout_editor_absoluteX="223dp"/>
+  <Button
+    android:id="@+id/button_topic"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/random_topic"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+    tools:layout_editor_absoluteX="68dp"/>
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Word"
+    tools:layout_editor_absoluteX="176dp"
+    tools:layout_editor_absoluteY="77dp"/>
+  <TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="New Rhyme"
+    tools:layout_editor_absoluteX="179dp"/>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="409dp"
+    android:layout_height="445dp"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="135dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

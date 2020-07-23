@@ -16,7 +16,7 @@ public class Word {
 
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
-  private String word = "";
+  private String name = "";
 
   public long getId() {
     return id;
@@ -27,28 +27,28 @@ public class Word {
   }
 
   @NonNull
-  public String getWord() {
-    return word;
+  public String getName() {
+    return name;
   }
 
-  public void setWord(@NonNull String word) {
-    this.word = word;
+  public void setWord(@NonNull String name) {
+    this.name = name;
   }
 
   @Override
   public int hashCode() {
-    return word.toLowerCase().hashCode();
+    return name.toLowerCase().hashCode();
   }
 
   @Override
   public boolean equals(@Nullable Object obj) {
-    return (obj == this) || (obj instanceof Word && word.equalsIgnoreCase(((Word)obj).word));
+    return (obj == this) || (obj instanceof Word && name.equalsIgnoreCase(((Word)obj).name));
   }
 
   @NonNull
   @Override
   public String toString() {
-    return word;
+    return name;
   }
 
 }

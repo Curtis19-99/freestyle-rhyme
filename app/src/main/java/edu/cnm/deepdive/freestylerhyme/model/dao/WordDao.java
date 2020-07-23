@@ -32,12 +32,12 @@ public interface WordDao {
   @Delete
   Single<Integer> delete(Word... words);
 
-  @Query("SELECT * FROM Word ORDER BY word")
+  @Query("SELECT * FROM Word ORDER BY name")
   LiveData<List<Word>> selectAll();
 
   @Transaction
-  @Query("SELECT * FROM Word ORDER BY word")
-  LiveData<List<WordWithResult>> selectAllWithQuotes();
+  @Query("SELECT * FROM Word ORDER BY name")
+  LiveData<List<WordWithResult>> selectAllWithResults();
 
   @Transaction
   @Query("SELECT * FROM Word WHERE word_id = :sourceId")

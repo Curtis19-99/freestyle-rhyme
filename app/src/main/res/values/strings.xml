@@ -14,4 +14,11 @@
 
   <string name="home_second">Home Second</string>
   <string name="sign_out">sign_out</string>
+  <string name="random_word">Random Word</string>
+  <string name="random_topic">Random Topic</string>
+
+  <string name="unattributed_word">(unknown)</string>
+  <string name="word_format">&#x2014;%s</string>
+
+
 </resources>
