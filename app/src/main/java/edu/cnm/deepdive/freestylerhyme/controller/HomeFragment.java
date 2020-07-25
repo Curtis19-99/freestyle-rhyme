@@ -12,7 +12,7 @@ public class HomeFragment extends Fragment {
 
   public View onCreateView(
       @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    View root = inflater.inflate(R.layout.fragment_home, container, false);
+    View root = inflater.inflate(R.layout.activity_main, container, false);
     return root; //TODO implement fragment_home in xml file.
   }
 

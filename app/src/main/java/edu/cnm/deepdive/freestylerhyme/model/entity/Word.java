@@ -7,7 +7,7 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(indices = @Index(value = "word", unique = true))
+@Entity(indices = @Index(value = "name", unique = true))
 public class Word {
 
   @PrimaryKey(autoGenerate = true)
@@ -51,5 +51,8 @@ public class Word {
     return name;
   }
 
+  public void setName(@NonNull String name) {
+    this.name = name;
+  }
 }
 

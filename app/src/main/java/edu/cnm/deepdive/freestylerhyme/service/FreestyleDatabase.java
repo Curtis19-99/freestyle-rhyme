@@ -9,6 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
+import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import edu.cnm.deepdive.freestylerhyme.model.dao.ResultDao;
 import edu.cnm.deepdive.freestylerhyme.model.dao.WordDao;
@@ -33,7 +34,7 @@ import edu.cnm.deepdive.freestylerhyme.R;
 
 @Database(
     entities = {Word.class, Result.class},
-    version = 1,
+    version = 2,
     exportSchema = true
 )
 @TypeConverters({FreestyleDatabase.Converters.class})
@@ -59,8 +60,23 @@ public abstract class FreestyleDatabase extends RoomDatabase {
 
     private static final FreestyleDatabase INSTANCE =
         Room.databaseBuilder(context, FreestyleDatabase.class, DB_NAME)
+            .addMigrations(new Migration12()) //To migrate from 1 to 2
             .addCallback(new FreestyleCallback())
             .build();
+
+  }
+
+
+  private static final class Migration12 extends Migration { // Migration class goes from version1 to version2
+
+    public Migration12() {
+      super(1, 2);
+    }
+
+    @Override
+    public void migrate(@NonNull SupportSQLiteDatabase database) {
+      database.execSQL("ALTER TABLE freestyle ADD COLUMN created INTEGER");
+    }
 
   }
 
