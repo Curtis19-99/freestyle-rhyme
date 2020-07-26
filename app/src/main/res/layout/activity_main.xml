@@ -5,34 +5,46 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:padding="8dp"
   tools:context=".controller.MainActivity">
 
-  <Button
-    android:id="@+id/button_word"
-    android:layout_width="wrap_content"
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/word_layout"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:text="@string/random_word"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-    tools:layout_editor_absoluteX="223dp"/>
-  <TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Word"
-    tools:layout_editor_absoluteX="176dp"
-    tools:layout_editor_absoluteY="77dp"/>
-  <TextView
-    android:id="@+id/textView2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="New Rhyme"
-    tools:layout_editor_absoluteX="179dp"/>
+    android:layout_margin="8dp"
+    app:hintEnabled="true"
+    app:hintAnimationEnabled="true"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <AutoCompleteTextView
+      android:id="@+id/word"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text"
+      android:hint="Word to Rhyme"/>
+
+  </com.google.android.material.textfield.TextInputLayout>
 
   <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerView"
-    android:layout_width="409dp"
-    android:layout_height="445dp"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="135dp"/>
+    android:id="@+id/rhymes_list"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintTop_toBottomOf="@id/word_layout"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/random_word"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:useCompatPadding="true"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

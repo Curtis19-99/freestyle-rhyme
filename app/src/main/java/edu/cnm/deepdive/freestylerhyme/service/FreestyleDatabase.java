@@ -75,7 +75,7 @@ public abstract class FreestyleDatabase extends RoomDatabase {
 
     @Override
     public void migrate(@NonNull SupportSQLiteDatabase database) {
-      database.execSQL("ALTER TABLE freestyle ADD COLUMN created INTEGER");
+      database.execSQL("ALTER TABLE Freestyle ADD COLUMN created INTEGER");
     }
 
   }

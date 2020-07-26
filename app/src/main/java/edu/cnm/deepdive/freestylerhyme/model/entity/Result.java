@@ -31,6 +31,13 @@ public class Result {
   @ColumnInfo(name = "syllable_count")
   private int syllableCount;
 
+  public Result() {
+
+  }
+  public Result(String text) {
+   this.text = text;
+  }
+
   public int getSyllableCount() {
     return syllableCount;
   }

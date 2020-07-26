@@ -1,12 +1,17 @@
 package edu.cnm.deepdive.freestylerhyme.controller;
 
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import edu.cnm.deepdive.freestylerhyme.R;
 import edu.cnm.deepdive.freestylerhyme.service.GoogleSignInService;
+import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
 

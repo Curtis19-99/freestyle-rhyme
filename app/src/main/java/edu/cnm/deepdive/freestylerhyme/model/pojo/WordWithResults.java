@@ -5,7 +5,7 @@ import edu.cnm.deepdive.freestylerhyme.model.entity.Result;
 import edu.cnm.deepdive.freestylerhyme.model.entity.Word;
 import java.util.List;
 
-public class WordWithResult extends Word {
+public class WordWithResults extends Word {
 
   @Relation(entity = Result.class, entityColumn = "word_id", parentColumn = "word_id")
   private List<Result> results;

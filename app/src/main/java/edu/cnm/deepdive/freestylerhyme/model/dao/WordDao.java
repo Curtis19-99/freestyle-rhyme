@@ -9,7 +9,8 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.freestylerhyme.model.entity.Word;
-import edu.cnm.deepdive.freestylerhyme.model.pojo.WordWithResult;
+import edu.cnm.deepdive.freestylerhyme.model.pojo.WordWithResults;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -37,11 +38,15 @@ public interface WordDao {
 
   @Transaction
   @Query("SELECT * FROM Word ORDER BY name")
-  LiveData<List<WordWithResult>> selectAllWithResults();
+  LiveData<List<WordWithResults>> selectAllWithResults();
 
   @Transaction
   @Query("SELECT * FROM Word WHERE word_id = :sourceId")
-  Single<WordWithResult> selectById(long sourceId);
+  Single<WordWithResults> selectById(long sourceId);
+
+  @Transaction
+  @Query("SELECT * FROM Word WHERE name = :name")
+  Maybe<WordWithResults> selectByName(String name);
 
 }
 

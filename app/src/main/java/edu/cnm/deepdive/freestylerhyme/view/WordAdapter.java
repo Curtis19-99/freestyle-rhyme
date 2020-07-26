@@ -1,14 +1,7 @@
 package edu.cnm.deepdive.freestylerhyme.view;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-import edu.cnm.deepdive.freestylerhyme.model.pojo.WordWithResult;
 //import edu.cnm.deepdive.freestylerhyme.view.ResultAdapter.Holder;
 //import edu.cnm.deepdive.freestylerhyme.view.ResultAdapter.OnClickListener;
-import java.util.List;
 
 //public class WordAdapter extends RecyclerView.Adapter<Holder> {
 //
