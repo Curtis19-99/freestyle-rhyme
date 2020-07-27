@@ -2,11 +2,14 @@ package edu.cnm.deepdive.freestylerhyme.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.ColumnInfo.Collate;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import java.util.Date;
 
+/**
+ * The type Result.
+ */
 @Entity(
     foreignKeys = @ForeignKey(
         entity = Word.class,
@@ -21,44 +24,100 @@ public class Result {
   @ColumnInfo(name = "result_id")
   private long id;
 
+  private Date created = new Date();
+
   @ColumnInfo(name = "word_id", index = true)
   private Long wordId;
-// TODO look at quotes and copy that implementation for created.
+
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String text = "";
 
-  @ColumnInfo(name = "syllable_count")
-  private int syllableCount;
-
+  /**
+   * Instantiates a new Result.
+   */
   public Result() {
 
   }
+
+  /**
+   * Instantiates a new Result.
+   *
+   * @param text the text
+   */
   public Result(String text) {
    this.text = text;
   }
 
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   * Gets word id.
+   *
+   * @return the word id
+   */
   public Long getWordId() {
     return wordId;
   }
 
+  /**
+   * Sets word id.
+   *
+   * @param wordId the word id
+   */
   public void setWordId(Long wordId) {
     this.wordId = wordId;
   }
 
+  /**
+   * Gets created.
+   *
+   * @return the created
+   */
+  public Date getCreated() {
+    return created;
+  }
+
+  /**
+   * Sets created.
+   *
+   * @param created the created
+   */
+  public void setCreated(Date created) {
+    this.created = created;
+  }
+
+  /**
+   * Gets text.
+   *
+   * @return the text
+   */
   @NonNull
   public String getText() {
     return text;
   }
 
+  /**
+   * Sets text.
+   *
+   * @param text the text
+   */
   public void setText(@NonNull String text) {
     this.text = text;
   }

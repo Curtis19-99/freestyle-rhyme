@@ -12,10 +12,12 @@ import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.SingleSource;
 import io.reactivex.schedulers.Schedulers;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * The type Word repository.
+ */
 public class WordRepository {
 
   private final Context context;
@@ -24,6 +26,11 @@ public class WordRepository {
   private final ResultDao resultDao;
   private final WordApiService wordApiService;
 
+  /**
+   * Instantiates a new Word repository.
+   *
+   * @param context the context
+   */
   public WordRepository(Context context) {
     this.context = context;
     database = FreestyleDatabase.getInstance();
@@ -32,18 +39,36 @@ public class WordRepository {
     wordApiService = WordApiService.getInstance();
   }
 
+  /**
+   * Gets all.
+   *
+   * @return the all
+   */
   public LiveData<List<Word>> getAll() {
     return wordDao.selectAll();
   }
 
+  /**
+   * Get single.
+   *
+   * @param id the id
+   * @return the single
+   */
   public Single<WordWithResults> get(long id) {
     return wordDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
+  /**
+   * Save completable.
+   *
+   * @param word the word
+   * @return the completable
+   */
   public Completable save(Word word) {
     if (word.getId() == 0) {
-      return Completable.fromAction(() -> {})
+      return Completable.fromAction(() -> {
+      })
           .subscribeOn(Schedulers.io());
     } else {
       return Completable.fromSingle(wordDao.delete(word))
@@ -51,9 +76,16 @@ public class WordRepository {
     }
   }
 
+  /**
+   * Delete completable.
+   *
+   * @param word the word
+   * @return the completable
+   */
   public Completable delete(Word word) {
     if (word.getId() == 0) {
-      return Completable.fromAction(() -> {})
+      return Completable.fromAction(() -> {
+      })
           .subscribeOn(Schedulers.io());
     } else {
       return Completable.fromSingle(wordDao.delete(word))
@@ -61,6 +93,12 @@ public class WordRepository {
     }
   }
 
+  /**
+   * Search single.
+   *
+   * @param word the word
+   * @return the single
+   */
   public Single<List<Result>> search(String word) {
     if (!word.isEmpty()) {
       return wordDao.selectByName(word)
@@ -68,7 +106,7 @@ public class WordRepository {
           .switchIfEmpty((SingleSource<? extends WordWithResults>) (observer) -> {
             wordApiService.get(word, BuildConfig.HOST, BuildConfig.API_KEY)
                 .subscribeOn(Schedulers.io())
-                .flatMap((result) ->{
+                .flatMap((result) -> {
                   WordWithResults wordWithResults = new WordWithResults();
                   wordWithResults.setName(word);
                   wordWithResults.setResults(

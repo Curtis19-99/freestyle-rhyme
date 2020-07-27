@@ -15,6 +15,9 @@ import edu.cnm.deepdive.freestylerhyme.service.WordRepository;
 import io.reactivex.disposables.CompositeDisposable;
 import java.util.List;
 
+/**
+ * The type Main view model.
+ */
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
 
   private final ResultRepository resultRepository;
@@ -23,6 +26,11 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final CompositeDisposable pending;
   private final MutableLiveData<ResultWithWord> result;
 
+  /**
+   * Instantiates a new Main view model.
+   *
+   * @param application the application
+   */
   public MainViewModel(@NonNull Application application) {
     super(application);
     resultRepository = new ResultRepository(application);
@@ -32,18 +40,38 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     pending = new CompositeDisposable();
   }
 
+  /**
+   * Gets results.
+   *
+   * @return the results
+   */
   public LiveData<List<ResultWithWord>> getResults() {
     return resultRepository.getAll();
   }
 
+  /**
+   * Gets words.
+   *
+   * @return the words
+   */
   public LiveData<List<Word>> getWords() {
     return wordRepository.getAll();
   }
 
+  /**
+   * Gets result.
+   *
+   * @return the result
+   */
   public MutableLiveData<ResultWithWord> getResult() {
     return result;
   }
 
+  /**
+   * Gets throwable.
+   *
+   * @return the throwable
+   */
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }

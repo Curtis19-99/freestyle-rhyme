@@ -14,18 +14,37 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
 
+/**
+ * The interface Word api service.
+ */
 public interface WordApiService {
 
+  /**
+   * Get single.
+   *
+   * @param word   the word
+   * @param host   the host
+   * @param apiKey the api key
+   * @return the single
+   */
   @GET("{word}/rhymes")
   Single<WordApiResponse> get(
       @Path("word") String word,
       @Header("x-rapidapi-host") String host,
       @Header("x-rapidapi-key") String apiKey);
 
+  /**
+   * Gets instance.
+   *
+   * @return the instance
+   */
   static WordApiService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   * The type Instance holder.
+   */
   class InstanceHolder {
 
     private static final WordApiService INSTANCE;

@@ -7,4 +7,3 @@
 
 * For anybody who is an aspiring poet.
 	>As an aspiring artist the line between poetry and music can blur. This app gives me versatility to create poetry with my music.
-

@@ -7,6 +7,9 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+/**
+ * The type Word.
+ */
 @Entity(indices = @Index(value = "name", unique = true))
 public class Word {
 
@@ -18,19 +21,39 @@ public class Word {
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String name = "";
 
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   * Gets name.
+   *
+   * @return the name
+   */
   @NonNull
   public String getName() {
     return name;
   }
 
+  /**
+   * Sets word.
+   *
+   * @param name the name
+   */
   public void setWord(@NonNull String name) {
     this.name = name;
   }
@@ -51,8 +74,14 @@ public class Word {
     return name;
   }
 
+  /**
+   * Sets name.
+   *
+   * @param name the name
+   */
   public void setName(@NonNull String name) {
     this.name = name;
   }
+  //TODO Ask if created from quotes Quote.java needs to be added to this class.
 }
 

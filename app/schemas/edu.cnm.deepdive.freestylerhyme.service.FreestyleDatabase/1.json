@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "9c9687af6699ef056caa9cb2a2b67d72",
+    "identityHash": "6e3970efb8767ac301a499e1ee9c4ce5",
     "entities": [
       {
         "tableName": "Word",
@@ -41,13 +41,19 @@
       },
       {
         "tableName": "Result",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`result_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word_id` INTEGER, `text` TEXT NOT NULL COLLATE NOCASE, `syllable_count` INTEGER NOT NULL, FOREIGN KEY(`word_id`) REFERENCES `Word`(`word_id`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`result_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER, `word_id` INTEGER, `text` TEXT NOT NULL COLLATE NOCASE, FOREIGN KEY(`word_id`) REFERENCES `Word`(`word_id`) ON UPDATE NO ACTION ON DELETE SET NULL )",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "result_id",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER",
+            "notNull": false
           },
           {
             "fieldPath": "wordId",
@@ -59,12 +65,6 @@
             "fieldPath": "text",
             "columnName": "text",
             "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "syllableCount",
-            "columnName": "syllable_count",
-            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -102,7 +102,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9c9687af6699ef056caa9cb2a2b67d72')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6e3970efb8767ac301a499e1ee9c4ce5')"
     ]
   }
 }

@@ -15,6 +15,9 @@ import edu.cnm.deepdive.freestylerhyme.R;
 import edu.cnm.deepdive.freestylerhyme.service.GoogleSignInService;
 import viewmodel.MainViewModel;
 
+/**
+ * The type Main activity.
+ */
 public class MainActivity extends AppCompatActivity {
 
 

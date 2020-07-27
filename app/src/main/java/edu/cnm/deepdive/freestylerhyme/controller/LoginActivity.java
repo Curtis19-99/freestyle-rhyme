@@ -13,6 +13,9 @@ import edu.cnm.deepdive.freestylerhyme.R;
 import edu.cnm.deepdive.freestylerhyme.service.GoogleSignInService;
 import java.io.IOException;
 
+/**
+ * The type Login activity.
+ */
 public class LoginActivity extends AppCompatActivity {
 
 

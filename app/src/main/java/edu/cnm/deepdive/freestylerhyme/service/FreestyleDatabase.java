@@ -32,9 +32,12 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import edu.cnm.deepdive.freestylerhyme.R;
 
+/**
+ * The type Freestyle database.
+ */
 @Database(
     entities = {Word.class, Result.class},
-    version = 2,
+    version = 1,
     exportSchema = true
 )
 @TypeConverters({FreestyleDatabase.Converters.class})
@@ -44,14 +47,34 @@ public abstract class FreestyleDatabase extends RoomDatabase {
 
   private static Application context;
 
+  /**
+   * Sets context.
+   *
+   * @param context the context
+   */
   public static void setContext(Application context) {
     FreestyleDatabase.context = context;
   }
 
+  /**
+   * Gets word dao.
+   *
+   * @return the word dao
+   */
   public abstract WordDao getWordDao();
 
+  /**
+   * Gets result dao.
+   *
+   * @return the result dao
+   */
   public abstract ResultDao getResultDao();
 
+  /**
+   * Gets instance.
+   *
+   * @return the instance
+   */
   public static FreestyleDatabase getInstance() {
     return InstanceHolder.INSTANCE;
   }
@@ -60,23 +83,8 @@ public abstract class FreestyleDatabase extends RoomDatabase {
 
     private static final FreestyleDatabase INSTANCE =
         Room.databaseBuilder(context, FreestyleDatabase.class, DB_NAME)
-            .addMigrations(new Migration12()) //To migrate from 1 to 2
             .addCallback(new FreestyleCallback())
             .build();
-
-  }
-
-
-  private static final class Migration12 extends Migration { // Migration class goes from version1 to version2
-
-    public Migration12() {
-      super(1, 2);
-    }
-
-    @Override
-    public void migrate(@NonNull SupportSQLiteDatabase database) {
-      database.execSQL("ALTER TABLE Freestyle ADD COLUMN created INTEGER");
-    }
 
   }
 
@@ -154,13 +162,28 @@ public abstract class FreestyleDatabase extends RoomDatabase {
 
   }
 
+  /**
+   * The type Converters.
+   */
   public static class Converters {
 
+    /**
+     * Date to long long.
+     *
+     * @param value the value
+     * @return the long
+     */
     @TypeConverter
     public static Long dateToLong(Date value) {
       return (value != null) ? value.getTime() : null;
     }
 
+    /**
+     * Long to date date.
+     *
+     * @param value the value
+     * @return the date
+     */
     @TypeConverter
     public static Date longToDate(Long value) {
       return (value != null) ? new Date(value) : null;
