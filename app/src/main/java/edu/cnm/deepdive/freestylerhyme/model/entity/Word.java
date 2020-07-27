@@ -82,6 +82,6 @@ public class Word {
   public void setName(@NonNull String name) {
     this.name = name;
   }
-  //TODO Ask if created from quotes Quote.java needs to be added to this class.
+
 }
 
