@@ -23,7 +23,7 @@ public class Result {
 
   @ColumnInfo(name = "word_id", index = true)
   private Long wordId;
-
+// TODO look at quotes and copy that implementation for created.
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String text = "";
@@ -36,14 +36,6 @@ public class Result {
   }
   public Result(String text) {
    this.text = text;
-  }
-
-  public int getSyllableCount() {
-    return syllableCount;
-  }
-
-  public void setSyllableCount(int syllableCount) {
-    this.syllableCount = syllableCount;
   }
 
   public long getId() {
@@ -76,5 +68,5 @@ public class Result {
   public String toString() {
     return text;
   }
-  //TODO add syllable count
+
 }
