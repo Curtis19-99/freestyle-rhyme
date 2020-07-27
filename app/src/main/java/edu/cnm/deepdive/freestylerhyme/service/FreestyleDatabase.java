@@ -9,8 +9,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
-import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+import edu.cnm.deepdive.freestylerhyme.R;
 import edu.cnm.deepdive.freestylerhyme.model.dao.ResultDao;
 import edu.cnm.deepdive.freestylerhyme.model.dao.WordDao;
 import edu.cnm.deepdive.freestylerhyme.model.entity.Result;
@@ -30,7 +30,6 @@ import java.util.Map;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import edu.cnm.deepdive.freestylerhyme.R;
 
 /**
  * The type Freestyle database.

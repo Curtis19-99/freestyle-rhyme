@@ -35,8 +35,11 @@ Some key functionalities of my app are the random rhyme generator and the random
 
 * Third party libraries
 > Google sign in
+>
 > Gson
+>
 > Retrofit
+>
 >ReactiveX
 
 * Rhyme Api, https://www.wordsapi.com/

@@ -19,6 +19,7 @@
 
   <string name="unattributed_word">(unknown)</string>
   <string name="word_format">&#x2014;%s</string>
+  <string name="word_to_rhyme">Word to Rhyme</string>
 
 
 </resources>
