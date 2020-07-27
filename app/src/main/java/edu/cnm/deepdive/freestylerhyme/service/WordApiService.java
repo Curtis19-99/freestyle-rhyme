@@ -47,7 +47,6 @@ public interface WordApiService {
           .build();
       INSTANCE = retrofit.create(WordApiService.class);
     }
-
   }
 
 }
