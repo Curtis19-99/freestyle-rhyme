@@ -11,7 +11,21 @@ Some key functionalities of my app are the random rhyme generator and the random
 ## [Intended users and user stories](user-stories.md)
 
 ## Current state of the app
-* The current state of the app is it is running and the main functionality is completed. 
+
+* Description
+The current state of the app is it is running and the main functionality is completed. 
+
+* Improvements
+
+A better first screen. Right now it is just the Google sign in, but I believe a lot could be done to make it look better.
+
+Have custom logos for the app icon as well as the random word button. 
+
+Incorporate some different colors at the top.
+
+* Stretch Goals
+
+Have every word in the recycler view be a button that you could click on and 
 
 ## [Wireframe diagram](wireframe.md)
 
