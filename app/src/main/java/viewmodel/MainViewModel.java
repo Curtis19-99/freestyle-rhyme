@@ -8,6 +8,7 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
+import edu.cnm.deepdive.freestylerhyme.model.entity.Result;
 import edu.cnm.deepdive.freestylerhyme.model.entity.Word;
 import edu.cnm.deepdive.freestylerhyme.model.pojo.ResultWithWord;
 import edu.cnm.deepdive.freestylerhyme.service.ResultRepository;
@@ -25,6 +26,8 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final MutableLiveData<Throwable> throwable;
   private final CompositeDisposable pending;
   private final MutableLiveData<ResultWithWord> result;
+  private final MutableLiveData<List<Result>> results;
+  private final MutableLiveData<String> randomWord;
 
   /**
    * Instantiates a new Main view model.
@@ -36,8 +39,10 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     resultRepository = new ResultRepository(application);
     wordRepository = new WordRepository(application);
     result = new MutableLiveData<>();
+    results = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
     pending = new CompositeDisposable();
+    randomWord = new MutableLiveData<>();
   }
 
   /**
@@ -45,8 +50,35 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
    *
    * @return the results
    */
-  public LiveData<List<ResultWithWord>> getResults() {
-    return resultRepository.getAll();
+  public LiveData<List<Result>> getResults() {
+    return results;
+  }
+
+  public void search(String word) {
+    throwable.setValue(null);
+    randomWord.setValue(null);
+    pending.add(
+        wordRepository.search(word.toLowerCase())
+            .subscribe(
+                (results) -> this.results.postValue(results),
+                (throwable) -> this.throwable.postValue(throwable)
+            )
+    );
+  }
+
+  public void fetchRandomWord() {
+    throwable.setValue(null);
+    pending.add(
+        wordRepository.random()
+            .subscribe(
+                (word) -> randomWord.postValue(word),
+                (throwable) -> this.throwable.postValue(throwable)
+            )
+    );
+  }
+
+  public LiveData<String> getRandomWord() {
+    return randomWord;
   }
 
   /**

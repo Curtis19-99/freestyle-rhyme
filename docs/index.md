@@ -56,10 +56,14 @@ Have every word in the recycler view be a button that you could click on and
 >
 >ReactiveX
 
-* Rhyme Api, https://www.wordsapi.com/
+* Words Api, https://www.wordsapi.com/
 > This service will be used to bring all the rhyme data. The app will not function without access to this Api.
 
 * Google sign in, https://developers.google.com/identity/sign-in/android/
 > Google sign in will be used to access stored data through each account. This will give the user the ability to remember recent words used. The app will work without access to Google sign in. However, it will not have the ability to remember recent words used.
+
+* Safe permission 
+
+> permission to use internet.
 
 ## [Basic user instructions](userInstructions.md)

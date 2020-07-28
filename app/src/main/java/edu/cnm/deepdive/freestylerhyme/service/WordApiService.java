@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * The interface Word api service.
@@ -27,9 +28,15 @@ public interface WordApiService {
    * @param apiKey the api key
    * @return the single
    */
-  @GET("{word}/rhymes")
+  @GET("words/{word}/rhymes")
   Single<WordApiResponse> get(
       @Path("word") String word,
+      @Header("x-rapidapi-host") String host,
+      @Header("x-rapidapi-key") String apiKey);
+
+  @GET("words/")
+  Single<WordApiResponse> getRandom(
+      @Query("random") boolean random,
       @Header("x-rapidapi-host") String host,
       @Header("x-rapidapi-key") String apiKey);
 
