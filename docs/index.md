@@ -13,7 +13,8 @@ Some key functionalities of my app are the random rhyme generator and the random
 ## Current state of the app
 
 * Description
-The current state of the app is it is running and the main functionality is completed. 
+
+The current state of the app is it is running and the main functionality is completed. This main functionality consists of bringing a list of rhymes for entered words. It also includes, a random word button that is essential for ideas in freestyling. Some incomplete elements are no icon on the floating action button. Also, there was nothing added to include voice to text. I have not found any major bugs yet. 
 
 * Improvements
 
@@ -23,9 +24,13 @@ Have custom logos for the app icon as well as the random word button.
 
 Incorporate some different colors at the top.
 
+Incorporate a logo onto the floating action button.
+
 * Stretch Goals
 
-Have every word in the recycler view be a button that you could click on and 
+I would like to add a feature where you can search a word to rhyme with and from the list of word that come from the entered word you could select a word and it would bring up rhymes instantly for that word.
+
+Add a function where you can select a word and bring up the definition of the word.
 
 ## [Wireframe diagram](wireframe.md)
 
@@ -46,6 +51,12 @@ Have every word in the recycler view be a button that you could click on and
 * API key (In case needed) a6149d8d0bmshfe3ef14dea12f55p15c09ejsn99ddb904e82b
 
 ## Technical requirements and dependencies
+
+* Minimum Android API required is Android 5.0 Lolipop API 21.
+
+* Hardware used
+
+BLU G5 for external device to run app on.
 
 * Third party libraries
 > Google sign in
