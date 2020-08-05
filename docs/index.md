@@ -48,8 +48,6 @@ Add a function where you can select a word and bring up the definition of the wo
 
 * Build project and run application.
 
-* API key (In case needed) a6149d8d0bmshfe3ef14dea12f55p15c09ejsn99ddb904e82b
-
 ## Technical requirements and dependencies
 
 * Minimum Android API required is Android 5.0 Lolipop API 21.
